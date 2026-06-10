@@ -1,2 +1,14 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+
+::selection {
+  background: none;
+}
+::-moz-selection {
+  background: none;
+}
+::-webkit-selection {
+  background: none;
+}
+
