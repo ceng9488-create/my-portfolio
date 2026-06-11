@@ -2,6 +2,9 @@
 @plugin '@tailwindcss/typography';
 
 
+body {
+  overflow: hidden;
+}
 ::selection {
   background: none;
 }
