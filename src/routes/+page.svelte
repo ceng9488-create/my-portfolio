@@ -2,7 +2,6 @@
 	import { fade, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { resolve } from '$app/paths';
 	import { ArrowRight, Star } from '@lucide/svelte';
 	import { gsap } from 'gsap';
 
@@ -26,7 +25,7 @@
 
 	const goToStory = (e: MouseEvent) => {
 		e.preventDefault();
-		if (!heroContent) { goto(resolve('/story')); return; }
+		if (!heroContent) { goto('/story'); return; }
 		glassActive = true;
 
 		const proxy = { blur: 8, bgOpacity: 0.18 };
@@ -48,7 +47,7 @@
 			opacity: 0,
 			duration: 1.2,
 			ease: 'power1.inOut',
-			onComplete: () => goto(resolve('/story'))
+			onComplete: () => goto('/story')
 		});
 	};
 </script>
@@ -83,7 +82,7 @@
 				Building expressive web experiences with code.
 			</p>
 			<div class=" flex justify-center">
-				<a href={resolve('/story')} onclick={goToStory} class="border-2 px-4 py-2 flex readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
+				<a href="/story" onclick={goToStory} class="border-2 px-4 py-2 flex readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
 					<span>Read my story</span>
 					<ArrowRight size={24} color="#8B5E3C" strokeWidth={2} class="moveArrow"/>
 					<span class="shimmer"></span>
