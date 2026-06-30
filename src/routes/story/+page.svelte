@@ -9,7 +9,7 @@
 >
 	<button
 		onclick={() => goto('/')}
-		class="text-sm flex items-center gap-1 transition-colors back-btn"
+		class="flex items-center gap-1 transition-colors back-btn font-spectral text-xl text-black"
 	>
 		← Back
 	</button>

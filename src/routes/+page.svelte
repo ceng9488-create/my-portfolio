@@ -1,15 +1,11 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
 	import { ArrowRight, Star } from '@lucide/svelte';
-	import { gsap } from 'gsap';
 
 	let mounted = $state(false);
 	let stars = $state<{ id: number; top: number; left: number }[]>([]);
 	let nextId = 0;
-	let heroContent: HTMLElement | undefined = $state(undefined);
-	let glassActive = $state(false);
 
 	onMount(() => {
 		mounted = true;
@@ -21,34 +17,6 @@
 		setTimeout(() => {
 			stars = stars.filter((s) => s.id !== id);
 		}, 2000);
-	};
-
-	const goToStory = (e: MouseEvent) => {
-		e.preventDefault();
-		if (!heroContent) { goto('/story'); return; }
-		glassActive = true;
-
-		const proxy = { blur: 8, bgOpacity: 0.18 };
-		gsap.to(proxy, {
-			blur: 48,
-			bgOpacity: 0,
-			duration: 1.2,
-			ease: 'power2.in',
-			onUpdate() {
-				if (!heroContent) return;
-				heroContent.style.backdropFilter = `blur(${proxy.blur}px) saturate(1.6)`;
-				(heroContent.style as unknown as Record<string, string>)['webkitBackdropFilter'] = `blur(${proxy.blur}px) saturate(1.6)`;
-				heroContent.style.background = `rgba(255, 255, 255, ${proxy.bgOpacity})`;
-			}
-		});
-
-		gsap.to(heroContent, {
-			scale: 0.75,
-			opacity: 0,
-			duration: 1.2,
-			ease: 'power1.inOut',
-			onComplete: () => goto('/story')
-		});
 	};
 </script>
 
@@ -62,7 +30,7 @@
 		</div>
 	{/each}
 	{#if mounted}
-		<div bind:this={heroContent} class="relative z-10 space-y-6 text-center" class:glass={glassActive}>
+		<div class="relative z-10 space-y-6 text-center">
 			<h1
 				class="text-5xl font-bold tracking-tight md:text-7xl"
 				style="color: #3B2F2F;"
@@ -82,7 +50,7 @@
 				Building expressive web experiences with code.
 			</p>
 			<div class=" flex justify-center">
-				<a href="/story" onclick={goToStory} class="border-2 px-4 py-2 flex readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
+				<a href="/story" class="border-2 px-4 py-2 flex readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
 					<span>Read my story</span>
 					<ArrowRight size={24} color="#8B5E3C" strokeWidth={2} class="moveArrow"/>
 					<span class="shimmer"></span>
@@ -163,14 +131,4 @@
     animation: shimmerAnimation 3.5s ease-in-out infinite;
   }
 
-  .glass {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px) saturate(1.4);
-    -webkit-backdrop-filter: blur(12px) saturate(1.4);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(139, 94, 60, 0.15);
-    padding: 2rem 2.5rem;
-    transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
-  }
 </style>
