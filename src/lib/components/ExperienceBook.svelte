@@ -13,7 +13,7 @@
 				width: 390,
 				height: 470,
 				flippingTime: 700,
-				drawShadow: false,
+				drawShadow: true,
 				usePortrait: false,
 				showCover: false,
 				mobileScrollSupport: false,
