@@ -8,6 +8,12 @@
 
 body {
   overflow: hidden;
+  background: radial-gradient(
+    circle,
+    #F5F2EB 0%,
+    #E8E1D3 70%,
+    #D8CCBA 100%
+  );
 }
 ::selection {
   background: none;

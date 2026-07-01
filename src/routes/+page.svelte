@@ -22,11 +22,11 @@
 
 <main
 	class="flex min-h-screen items-center justify-center text-zinc-100 relative"
-	style="background: radial-gradient(ellipse at center, #EEE7D2 0%, #E8E0C8 55%, #D5BFA7 100%);"
+	style="background-color: #CDB091; background-image: url('/images/bg1.png'); background-size: cover; background-position: center; color: #3B2F2F;"
 >
 	{#each stars as star (star.id)}
 		<div class="star absolute pointer-events-none z-0" style="top:{star.top}vh; left:{star.left}vw">
-			<Star size={20} color="#C58940" strokeWidth={3} fill="#C58940" />
+			<Star size={20} color="#8A3324" strokeWidth={3} fill="#8A3324" />
 		</div>
 	{/each}
 	{#if mounted}
@@ -43,16 +43,21 @@
 				style="color: #6B5D4F;"
       in:fly={{ y: 20, duration: 800, delay: 300 }} >
 				<span class="px-2">Frontend-focused Full Stack Developer </span>
-        <Star onclick={spawnStar} size={20} color="#C58940" strokeWidth={3} fill="#C58940" class="mainStar"/>
+        <Star onclick={spawnStar} size={20} color="#8A3324" strokeWidth={3} fill="#8A3324" class="mainStar"/>
 
 			</p>
 			<p class="mx-auto max-w-md text-sm" style="color: #8B7D6B;" in:fade={{ duration: 1000, delay: 600 }}>
 				Building expressive web experiences with code.
 			</p>
-			<div class=" flex justify-center">
+			<div class="flex justify-center gap-4 flex-wrap">
 				<a href="/story" class="border-2 px-4 py-2 flex readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
 					<span>Read my story</span>
 					<ArrowRight size={24} color="#8B5E3C" strokeWidth={2} class="moveArrow"/>
+					<span class="shimmer"></span>
+				</a>
+				<a href="/experience" class="border-2 px-4 py-2 flex items-center gap-2 readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
+					
+					<span>Read my experience</span>
 					<span class="shimmer"></span>
 				</a>
 			</div>
