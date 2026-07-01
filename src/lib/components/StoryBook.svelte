@@ -317,15 +317,15 @@
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
-		background: #c9b48a;
-		border: 1.5px solid #9e845a;
+		background: #ffffff;
+		/* border: 1.5px solid #9e845a; */
 		transition:
 			background 0.25s ease,
 			transform 0.25s ease;
 	}
 
 	.dot.active {
-		background: #8b5e3c;
+		background: #9e845a;
 		transform: scale(1.3);
 	}
 </style>

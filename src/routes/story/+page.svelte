@@ -5,11 +5,11 @@
 
 <main
 	class="flex min-h-screen flex-col items-center justify-center gap-6"
-	style="background: radial-gradient(ellipse at center, #EEE7D2 0%, #E8E0C8 55%, #D5BFA7 100%); color: #3B2F2F;"
+	style="background-color: #CDB091; background-image: url('/images/bg2.png'); background-size: cover; background-position: center; color: #3B2F2F;"
 >
 	<button
 		onclick={() => goto('/')}
-		class="flex items-center gap-1 transition-colors back-btn font-spectral text-xl text-black"
+		class="flex items-center gap-1 transition-colors back-btn font-spectral text-xl text-white"
 	>
 		← Back
 	</button>
@@ -18,10 +18,10 @@
 </main>
 
 <style>
-	.back-btn {
+	/* .back-btn {
 		color: #6B5D4F;
 	}
 	.back-btn:hover {
 		color: #3B2F2F;
-	}
+	} */
 </style>
