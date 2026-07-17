@@ -6,9 +6,9 @@
 
 <main
 	class="relative flex min-h-screen flex-col items-center justify-center"
-		style="background: radial-gradient(ellipse at center, #EEE7D2 0%, #E8E0C8 55%, #D5BFA7 100%); color: #3B2F2F;"
+	style="background-color: #CDB091; background-image: url('/images/bg2.png'); background-size: cover; background-position: center; color: #3B2F2F;"
 >
-	<div class="w-full mb-8">
+	<!-- <div class="w-full mb-8">
 		<button
 			onclick={() => goto('/')}
 			aria-label="Back to home"
@@ -16,7 +16,7 @@
 		>
 			<House size={24} />
 		</button>
-	</div>
+	</div> -->
 
 	<ExperienceBook />
 </main>

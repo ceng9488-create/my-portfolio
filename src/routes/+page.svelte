@@ -50,11 +50,11 @@
 				Building expressive web experiences with code.
 			</p>
 			<div class="flex justify-center gap-4 flex-wrap">
-				<a href="/story" class="border-2 px-4 py-2 flex readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
+				<!-- <a href="/story" class="border-2 px-4 py-2 flex readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
 					<span>Read my story</span>
 					<ArrowRight size={24} color="#8B5E3C" strokeWidth={2} class="moveArrow"/>
 					<span class="shimmer"></span>
-				</a>
+				</a> -->
 				<a href="/experience" class="border-2 px-4 py-2 flex items-center gap-2 readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
 					
 					<span>Read my experience</span>
