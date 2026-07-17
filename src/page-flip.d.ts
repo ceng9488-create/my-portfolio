@@ -29,6 +29,8 @@ declare module 'page-flip' {
 		flipNext(corner?: 'top' | 'bottom'): void;
 		flipPrev(corner?: 'top' | 'bottom'): void;
 		flip(pageNum: number, corner?: 'top' | 'bottom'): void;
+		/** Jumps to a page without playing the flip animation. */
+		turnToPage(pageNum: number): void;
 		getCurrentPageIndex(): number;
 		getPageCount(): number;
 		on(event: string, callback: (e: unknown) => void): void;
