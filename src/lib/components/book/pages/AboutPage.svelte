@@ -10,7 +10,10 @@
 
 <PageShell background="page2.png">
 	<div class="max-w-80">
-		<h2 class="page-heading">{about.title}</h2>
+		<h2 class="page-heading">
+			<span class="chapter-eyebrow">Chapter 1</span>
+			{about.title}
+		</h2>
 		<p class="pt-8">
 			{before}{#if after}<span class="marker">{about.highlight}</span>{after}{/if}
 		</p>

@@ -20,6 +20,28 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Ce — Full-Stack Developer Portfolio</title>
+	<meta
+		name="description"
+		content="Full-stack developer building products that connect people, with a focus on interactive and cognitive-training tools."
+	/>
+
+	<meta property="og:title" content="Ce — Full-Stack Developer Portfolio" />
+	<meta
+		property="og:description"
+		content="Full-stack developer building products that connect people, with a focus on interactive and cognitive-training tools."
+	/>
+	<meta
+		property="og:image"
+		content="https://my-portfolio-three-chi-75.vercel.app/og-image.png"
+	/>
+	<meta property="og:url" content="https://my-portfolio-three-chi-75.vercel.app/" />
+	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
+
 <main
 	class="flex min-h-screen items-center justify-center text-zinc-100 relative"
 	style="background-color: #CDB091; background-image: url('/images/bg1.png'); background-size: cover; background-position: center; color: #3B2F2F;"
@@ -57,7 +79,7 @@
 				</a> -->
 				<a href="/experience" class="border-2 px-4 py-2 flex items-center gap-2 readbtn" style="border-color: #8B5E3C; color: #3B2F2F;">
 					
-					<span>Read my experience</span>
+					<span>Read my story</span>
 					<span class="shimmer"></span>
 				</a>
 			</div>

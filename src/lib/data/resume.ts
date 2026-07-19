@@ -35,7 +35,7 @@ export const experience: { title: string; roles: Role[] } = {
 			title: 'Senior Full-Stack Developer',
 			period: 'EdTech · Singapore · 2025 — 2026',
 			points: [
-				'Django on the back end, with an older JavaScript front end kept alive alongside it.',
+				'Django on the back end, with JavaScript front end kept alive alongside it.',
 				'Kept data consistent across a handful of internal and third-party systems.',
 				'Worked on a learning platform, mostly on the parts that had been there a while.'
 			]
@@ -153,7 +153,14 @@ export const projectsOutro = 'More to come — new projects coming soon.';
 
 export const contact = {
 	title: 'Get In Touch',
-	blurb: "Let's build something great together.",
+	blurb: 'Thanks for reading to the end.',
+	prompt: 'like the book, or have an idea for the next chapter? I would like to hear it.',
+	email: 'eng5128@gmail.com',
+	/** Pre-filled mailto subjects, so nobody has to work out how to open. */
+	// intents: [
+	// 	{ label: "Let's work together", subject: "Let's work together" },
+	// 	{ label: 'Report a bug or idea', subject: 'About your book' }
+	// ],
 	links: [
 		{ label: 'eng5128@gmail.com', href: 'mailto:eng5128@gmail.com', icon: 'mail' as const },
 		{

@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { projects, projectsOutro } from '$lib/data/resume';
 	import PageShell from '../PageShell.svelte';
+	import SpreadTitle from '../SpreadTitle.svelte';
 </script>
 
 <PageShell background="page7.png" cover contentTop="3rem">
 	<div class="max-w-80">
-		<h2 class="spread-title">Projects</h2>
+		<SpreadTitle chapter={5} title="Projects" />
 		{#each projects as project (project.name)}
 			<div class="project">
 				{#if project.href}
@@ -21,15 +22,6 @@
 </PageShell>
 
 <style>
-	.spread-title {
-		font-size: 1.25rem;
-		font-weight: 700;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		margin: 0 0 1.2rem;
-		text-align: center;
-		color: var(--book-accent-deep);
-	}
 	/* Was a hand-applied `mt-4` on every project but the first. */
 	.project + .project {
 		margin-top: 1rem;

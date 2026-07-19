@@ -2,6 +2,7 @@
 	import type { SpreadSide } from '$lib/book/dial-geometry';
 	import { education } from '$lib/data/resume';
 	import PageShell from '../PageShell.svelte';
+	import SpreadTitle from '../SpreadTitle.svelte';
 
 	/**
 	 * One leaf of the education spread: degrees on the left, certificates on the
@@ -14,7 +15,7 @@
 <PageShell {background} cover contentTop={side === 'left' ? '4rem' : '3rem'}>
 	<div class="max-w-80">
 		{#if side === 'left'}
-			<h2 class="spread-title">{education.title}</h2>
+			<SpreadTitle chapter={4} title={education.title} />
 			{#each education.schools as school (school.institution + school.period)}
 				<section class="entry">
 					<p class="headline">{school.institution}</p>
@@ -23,7 +24,7 @@
 				</section>
 			{/each}
 		{:else}
-			<h2 class="spread-title">{education.certificationsTitle}</h2>
+			<SpreadTitle title={education.certificationsTitle} />
 			{#each education.certifications as cert (cert.name)}
 				<section class="entry cert">
 					<p class="headline">
@@ -41,16 +42,6 @@
 </PageShell>
 
 <style>
-	.spread-title {
-		font-size: 1.25rem;
-		font-weight: 700;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		margin: 0 0 1.2rem;
-		text-align: center;
-		color: var(--book-accent-deep);
-	}
-
 	.entry + .entry {
 		margin-top: 1.1rem;
 	}

@@ -7,6 +7,9 @@
 
 
 body {
+  /* Set here rather than on .book-container: page-flip re-parents the `.page`
+     elements at runtime, and body is the one ancestor they never leave. */
+  font-family: var(--font-spectral);
   overflow: hidden;
   background: radial-gradient(
     circle,

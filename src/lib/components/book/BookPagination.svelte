@@ -16,7 +16,7 @@
 	} = $props();
 </script>
 
-<div class="pagination">
+<div class="pagination font-spectral">
 	<button class="nav-btn" onclick={onPrev} disabled={!canGoPrev} aria-label="Previous page">
 		&#8249;
 	</button>
@@ -45,20 +45,19 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 2.25rem;
-		height: 2.25rem;
-		border-radius: 50%;
-		border: 1px solid var(--book-accent);
+		width: 2.75rem;
+		height: 2.75rem;
+		border: 0;
 		background: transparent;
 		color: #ffffff;
-		font-size: 1.25rem;
+		font-size: 2.25rem;
 		line-height: 1;
 		cursor: pointer;
-		transition: background 0.2s ease;
+		transition: opacity 0.2s ease;
 	}
 
 	.nav-btn:hover:not(:disabled) {
-		background: var(--book-accent-wash);
+		opacity: 0.6;
 	}
 
 	.nav-btn:disabled {

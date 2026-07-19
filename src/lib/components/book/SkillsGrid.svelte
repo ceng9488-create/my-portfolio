@@ -66,10 +66,12 @@
 
 <style>
 	/* Sits under the title and stops well clear of the dial arc, which rises
-	   ~290px from the spine-bottom corner. */
+	   ~290px from the spine-bottom corner — on a 700px leaf that leaves the band
+	   above ~410px free, so with the grid 154px tall this can go as low as 16rem
+	   before the two collide. */
 	.sk-grid {
 		position: absolute;
-		top: 7rem;
+		top: 9rem;
 		left: 1.2rem;
 		right: 1.2rem;
 		display: grid;

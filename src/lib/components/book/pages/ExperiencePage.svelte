@@ -2,6 +2,7 @@
 	import type { SpreadSide } from '$lib/book/dial-geometry';
 	import { experience } from '$lib/data/resume';
 	import PageShell from '../PageShell.svelte';
+	import SpreadTitle from '../SpreadTitle.svelte';
 
 	/**
 	 * One leaf of the experience spread. The roles run most-recent-first across
@@ -17,7 +18,7 @@
 <PageShell {background} cover contentTop={side === 'left' ? '4rem' : '3rem'}>
 	<div class="max-w-80">
 		{#if side === 'left'}
-			<h2 class="spread-title">{experience.title}</h2>
+			<SpreadTitle chapter={3} title={experience.title} />
 		{/if}
 		{#each roles as role (role.title + role.period)}
 			<section class="role-block">
@@ -34,16 +35,6 @@
 </PageShell>
 
 <style>
-	.spread-title {
-		font-size: 1.25rem;
-		font-weight: 700;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		margin: 0 0 1.2rem;
-		text-align: center;
-		color: var(--book-accent-deep);
-	}
-
 	.role-block + .role-block {
 		margin-top: 1.1rem;
 	}

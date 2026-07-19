@@ -3,6 +3,7 @@
 	import type { SpreadSide } from '$lib/book/dial-geometry';
 	import type { Dial } from '$lib/book/dial.svelte';
 	import PageShell from '../PageShell.svelte';
+	import SpreadTitle from '../SpreadTitle.svelte';
 	import SkillNote from '../SkillNote.svelte';
 	import SkillsDial from '../SkillsDial.svelte';
 	import SkillsGrid from '../SkillsGrid.svelte';
@@ -20,7 +21,9 @@
      only push the title off. `tl-{side}` tells the dial which edge is its spine. -->
 <PageShell {background} contentTop="0" contentClass="tl-{side}">
 	{#if side === 'left'}
-		<h2 class="spread-title">Skills</h2>
+		<div class="title-slot">
+			<SpreadTitle chapter={2} title="Skills" />
+		</div>
 		<SkillsGrid {dial} />
 	{:else}
 		<!-- The right leaf's top corner is the only space the dial doesn't reach:
@@ -36,18 +39,14 @@
 </PageShell>
 
 <style>
-	.spread-title {
+	/* Unlike the other spreads, this title is lifted out of flow so the dial can
+	   own the whole leaf beneath it. The wrapper carries the position; the
+	   heading itself stays the shared SpreadTitle. */
+	.title-slot {
 		position: absolute;
 		top: 4rem;
 		left: 0;
 		right: 0;
-		font-size: 1.25rem;
-		font-weight: 700;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		margin: 0;
-		text-align: center;
-		color: var(--book-accent-deep);
 	}
 
 	/* Left inset clears the panel that overhangs the gutter (half of its 150px);
