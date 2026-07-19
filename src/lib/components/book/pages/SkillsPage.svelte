@@ -5,6 +5,7 @@
 	import PageShell from '../PageShell.svelte';
 	import SkillNote from '../SkillNote.svelte';
 	import SkillsDial from '../SkillsDial.svelte';
+	import SkillsGrid from '../SkillsGrid.svelte';
 
 	/**
 	 * One leaf of the skills spread. The two leaves are the same page mirrored:
@@ -20,6 +21,7 @@
 <PageShell {background} contentTop="0" contentClass="tl-{side}">
 	{#if side === 'left'}
 		<h2 class="spread-title">Skills</h2>
+		<SkillsGrid {dial} />
 	{:else}
 		<!-- The right leaf's top corner is the only space the dial doesn't reach:
 		     the arc rises from the spine-bottom corner and the panel hugs the

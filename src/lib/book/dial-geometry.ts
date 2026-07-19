@@ -10,10 +10,14 @@
 
 export const ARC_RADIUS = 200;
 
-// Clearance stacks outward: the 18px dot sits on the arc, the year label clears
-// it, and the panel clears the enlarged focal year.
+// Clearance stacks outward: the 18px dot sits on the arc and the year label
+// clears it.
 export const YEAR_RADIUS = ARC_RADIUS + 38;
-export const PANEL_RADIUS = ARC_RADIUS + 92;
+
+// The panel goes the other way — inward, so the chips read inside the half
+// circle rather than above it. Measured from the same centre, so it stays clear
+// of the arc as long as it is under ARC_RADIUS.
+export const PANEL_RADIUS = ARC_RADIUS - 90;
 
 /**
  * Where the selected year comes to rest. 90° is the apex — which is exactly the
