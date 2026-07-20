@@ -13,7 +13,7 @@ export const chapters: Chapter[] = [
 	{ label: 'Experience', page: 4 },
 	{ label: 'Education', page: 6 },
 	{ label: 'Projects', page: 8 },
-	{ label: 'Contact', page: 9 }
+	{ label: 'Contact', page: 10 }
 ];
 
 export const about = {
@@ -138,18 +138,48 @@ export const education: {
 	]
 };
 
-export type Project = { name: string; description: string; href?: string };
+export type Project = {
+	name: string;
+	/** One line under the name on the carousel — kept short enough for one row. */
+	tagline: string;
+	description: string;
+	stack: string[];
+	href?: string;
+	/**
+	 * Screenshot under /images. Left off until there is a real one: the right leaf
+	 * falls back to a drawn mock-window keyed on the project's own colours, which
+	 * reads as deliberate in a way a "no image" box would not.
+	 */
+	image?: string;
+};
 
 export const projects: Project[] = [
 	{
 		name: 'Task Tracker',
+		tagline: 'React 19 productivity app',
 		description:
 			'A personal productivity app for daily tasks — priority management, drag-to-reorder, and real-time completion stats. Built with React 19, TypeScript, and Vite.',
-		href: 'https://github.com/ceng9488-create/task-tracker'
+		stack: ['React 19', 'TypeScript', 'Vite'],
+		href: 'https://github.com/ceng9488-create/task-tracker',
+		image: 'task-tracker.png'
+	},
+	{
+		name: 'Registration API',
+		tagline: 'NestJS teacher–student REST API',
+		description:
+			'A REST backend for teacher–student registrations: JWT auth, registering students under a teacher, resolving the students two teachers have in common, suspensions, and working out who should receive a notification. Documented with Swagger and deployed on Railway.',
+		stack: ['NestJS', 'TypeScript', 'Prisma', 'MySQL', 'JWT'],
+		href: 'https://github.com/ceng9488-create/api'
 	}
 ];
 
 export const projectsOutro = 'More to come — new projects coming soon.';
+
+export const closing = {
+	title: 'The End',
+	body: 'Thanks for reading all the way through.',
+	signoff: '— Chue Eng'
+};
 
 export const contact = {
 	title: 'Get In Touch',

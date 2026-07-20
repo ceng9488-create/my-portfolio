@@ -3,15 +3,17 @@
 	import '$lib/styles/book.css';
 
 	import { scaleToFit } from '$lib/actions/scale-to-fit';
+	import { ProjectCarousel } from '$lib/book/carousel.svelte';
 	import { Dial } from '$lib/book/dial.svelte';
 	import { Flipbook } from '$lib/book/flipbook.svelte';
-	import { chapters } from '$lib/data/resume';
+	import { chapters, projects } from '$lib/data/resume';
 	import { timeline } from '$lib/data/timeline';
 
 	import BookLoader from './book/BookLoader.svelte';
 	import BookPagination from './book/BookPagination.svelte';
 	import ChapterMenu from './book/ChapterMenu.svelte';
 	import AboutPage from './book/pages/AboutPage.svelte';
+	import ClosingPage from './book/pages/ClosingPage.svelte';
 	import ContactPage from './book/pages/ContactPage.svelte';
 	import ContentsPage from './book/pages/ContentsPage.svelte';
 	import EducationPage from './book/pages/EducationPage.svelte';
@@ -37,6 +39,10 @@
 	// One Dial for both halves of the skills spread: they draw the same dial from
 	// opposite edges and must stay in lockstep across the gutter.
 	const dial = new Dial(timeline);
+
+	// Likewise one carousel across the projects spread: the left leaf picks and
+	// the right leaf renders what was picked.
+	const carousel = new ProjectCarousel(projects);
 
 	onMount(() => book.mount(bookEl));
 </script>
@@ -75,8 +81,10 @@
 				<!-- 5 --><ExperiencePage side="right" background="page4.png" />
 				<!-- 6 --><EducationPage side="left" background="page2.png" />
 				<!-- 7 --><EducationPage side="right" background="page4.png" />
-				<!-- 8 --><ProjectsPage />
-				<!-- 9 --><ContactPage />
+				<!-- 8 --><ProjectsPage {carousel} side="left" background="page2.png" />
+				<!-- 9 --><ProjectsPage {carousel} side="right" background="page4.png" />
+				<!-- 10 --><ContactPage />
+				<!-- 11 --><ClosingPage />
 			</div>
 		</div>
 
