@@ -21,13 +21,13 @@
 </script>
 
 <svelte:head>
-	<title>Ce — Full-Stack Developer Portfolio</title>
+	<title>CCE — Full-Stack Developer Portfolio</title>
 	<meta
 		name="description"
 		content="Full-stack developer building products that connect people, with a focus on interactive and cognitive-training tools."
 	/>
 
-	<meta property="og:title" content="Ce — Full-Stack Developer Portfolio" />
+	<meta property="og:title" content="CCE — Full-Stack Developer Portfolio" />
 	<meta
 		property="og:description"
 		content="Full-stack developer building products that connect people, with a focus on interactive and cognitive-training tools."
